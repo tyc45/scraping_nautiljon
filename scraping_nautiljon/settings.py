@@ -87,3 +87,9 @@ RANDOMIZE_RANDOM_DELAY = True
 #HTTPCACHE_DIR = 'httpcache'
 #HTTPCACHE_IGNORE_HTTP_CODES = []
 #HTTPCACHE_STORAGE = 'scrapy.extensions.httpcache.FilesystemCacheStorage'
+
+ITEM_PIPELINES = {
+    'scraping_nautiljon.pipelines.ScrapingNautiljonPipeline' : 300,
+}
+MONGO_URI = 'mongodb://localhost:27017'
+MONGO_DATABASE = 'nautiljonDB'

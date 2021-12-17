@@ -7,6 +7,13 @@ import scrapy
 
 
 class ScrapingNautiljonItem(scrapy.Item):
-    # define the fields for your item here like:
-    # name = scrapy.Field()
-    pass
+    title = scrapy.Field()
+    type = scrapy.Field()
+    release_date = scrapy.Field()
+    label = scrapy.Field()
+    producer = scrapy.Field()
+    artists = scrapy.Field()
+    lyrics = scrapy.Field()
+    composers = scrapy.Field()
+    arrangers = scrapy.Field()
+    tracklist = scrapy.Field()
