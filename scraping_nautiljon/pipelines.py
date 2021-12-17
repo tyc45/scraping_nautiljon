@@ -38,6 +38,6 @@ class ScrapingNautiljonPipeline:
 
     def process_item(self, item, spider):
         # how to handle each post
-        self.db[self.collection_name].insert_many(dict(item))
+        self.db[self.collection_name].insert_one(dict(item))
         logging.debug("Post added to MongoDB")
         return item

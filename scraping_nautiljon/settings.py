@@ -91,5 +91,5 @@ RANDOMIZE_RANDOM_DELAY = True
 ITEM_PIPELINES = {
     'scraping_nautiljon.pipelines.ScrapingNautiljonPipeline' : 300,
 }
-MONGO_URI = 'mongodb://localhost:27017'
+MONGO_URI = 'mongodb+srv://JordanT:Gg17Btz2tlhf@cluster0.hiike.mongodb.net/nautiljonDB?retryWrites=true&w=majority'
 MONGO_DATABASE = 'nautiljonDB'
