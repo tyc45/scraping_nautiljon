@@ -15,13 +15,13 @@ class JmusicSpider(CrawlSpider):
         Yields:
             [type]: [description]
         """        
-        yield scrapy.Request(url='https://www.nautiljon.com/jmusic/?q=z', headers={
+        yield scrapy.Request(url='https://www.nautiljon.com/jmusic/?q=z&dbt=0', headers={
             'User-Agent': self.user_agent
     })
 
     rules = (
         Rule(LinkExtractor(restrict_xpaths='//td/span[@class="fright"]/following-sibling::a'), callback='parse_item', follow=True),
-        Rule(LinkExtractor(restrict_xpaths='//p[@class="menupage"][1]/a[text()=">|"]'), follow=True),
+        Rule(LinkExtractor(restrict_xpaths='//p[@class="menupage"][1]/a[text()=">>"]'), follow=True),
     )
 
     def parse_item(self, response):
