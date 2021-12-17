@@ -1,6 +1,7 @@
 import scrapy
 from scrapy.linkextractors import LinkExtractor
 from scrapy.spiders import CrawlSpider, Rule
+from scrapy.shell import inspect_response
 
 
 class JmusicSpider(CrawlSpider):
@@ -35,5 +36,6 @@ class JmusicSpider(CrawlSpider):
         item["lyrics"] = response.xpath('//span[text()="Paroles : "]/following-sibling::a/text()').getall()
         item["composers"] = response.xpath('//span[text()="Compositeurs : "]/following-sibling::a/text()').getall()
         item["arrangers"] = response.xpath('//span[text()="Arrangements : "]/following-sibling::a/text()').getall()
-        item["tracklist"] = response.xpath('//table[@id="onglets_3_tracklist"]/tbody/tr/td[@class="cd_tracklist_titre"]/text()').getall()
+        item["tracklist"] = response.xpath('//table[@id="onglets_3_tracklist"]//td[@class="cd_tracklist_titre"]/text()').getall()
+        # if not item["tracklist"]: inspect_response(response,self)
         return item
